@@ -14,15 +14,25 @@ ShutdownController = {
     takeOrders : function(req, res){
 
         var _this = this;
-        try {
 
+        try {
+            var bundle = JSON.parse( req.param("bundle") ) ;
+            var pid =  JSON.parse( req.param("pid") ) ;
+            var task = JSON.parse( req.param("task") );
             //var token = appConfig.shutdownService.token;
+            console.log("killing process ", pid);
+            setTimeout( function(){
+                console.log("..wait for a sec and load task ");
+                //switch & spawn ;)
+            }, 1000);
+
+
         } catch (err){
             logger.error(
                 'shutdown',
                 'SHUTDOWN:CONTROLLER:ERR:1',
                 err,
-                __stack
+                err.stack
             );
         }
         this.renderJSON({status:"ok"});

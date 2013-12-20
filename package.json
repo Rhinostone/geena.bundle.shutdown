@@ -12,9 +12,7 @@
     "name": "Martin-Luther ETOUMAN",
     "email": "martin@hinostone.com"
   },
-  "dependencies": {
-      "geena"         : "0.0.9"
-  },
+  "dependencies": {},
   "repository" : {
       "type" : "git",
       "url" : "https://github.com/Rhinostone/geena.bundle.shutdown.git"
