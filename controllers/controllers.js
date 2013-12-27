@@ -16,16 +16,20 @@ ShutdownController = {
         var _this = this;
 
         try {
-            var bundle = JSON.parse( req.param("bundle") ) ;
-            var pid =  JSON.parse( req.param("pid") ) ;
-            var task = JSON.parse( req.param("task") );
+            var bundle  = req.param("bundle") ;
+            var pid     = req.param("pid") ;
+            var task    = req.param("task");
+            var env     = req.param("env") || 'prod';
             //var token = appConfig.shutdownService.token;
-            console.log("killing process ", pid);
-            setTimeout( function(){
-                console.log("..wait for a sec and load task ");
-                //switch & spawn ;)
-            }, 1000);
 
+            taskHandler = getContext("taskHandler");
+            console.log("killing process ", pid);
+            taskHandler.process({
+                task    : task,
+                pid     : pid,
+                bundle  : bundle,
+                env     : env
+            });
 
         } catch (err){
             logger.error(
