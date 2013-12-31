@@ -31,7 +31,7 @@ ShutdownController = {
                 env     : env
             });
 
-        } catch (err){
+        } catch (err) {
             logger.error(
                 'shutdown',
                 'SHUTDOWN:CONTROLLER:ERR:1',
