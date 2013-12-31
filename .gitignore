@@ -27,7 +27,6 @@ desktop.ini
 
 # Capistrano
 Capfile
-/config
 
 # Misc
 /data
