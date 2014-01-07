@@ -3,14 +3,36 @@
         "url" : "/",
         "param" : {"action" : "takeOrders"}
     },
+    "start-all-bundles" : {
+        "requirements" : {
+            "env" : "(?:dev|debug|stage|prod)"
+        },
+        "url" : "/start/:env",
+        "param" : {"action" : "startAllBundles"}
+    },
+    "stop-all-bundles" : {
+        "comment" : "Stops all bundles",
+        "url" : "/stop",
+        "param" : {"action" : "stopAllBundles"}
+    },
     "take-orders" : {
         "requirements" : {
-            "bundle" : "([A-Za-z]*)",
+            "bundle" : "([A-Za-z0-9]*)",
             "task" : "([A-Za-z0-9-&+.]*)",
             "pid" : "([0-9]*)",
             "env" : "(?:dev|debug|stage|prod)"
         },
         "url" : "/:bundle/:task/:pid/:env",
         "param" : {"action" : "takeOrders"}
+    },
+    "start-bundle" : {
+        "comment" : "Start a specific bundle",
+        "requirements" : {
+            "task" : "([A-Za-z0-9-&+.]*)",
+            "bundle" : "([A-Za-z0-9]*)",
+            "env" : "(?:dev|debug|stage|prod)"
+        },
+        "url" : "/:task/:bundle/:env",
+        "param" : {"action" : "startBundle"}
     }
 }
