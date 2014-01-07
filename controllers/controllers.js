@@ -59,11 +59,13 @@ ShutdownController = {
 
             taskHandler = getContext("taskHandler");
             console.log("starting bundle ", bundle);
-             taskHandler.process({
+            taskHandler.process({
                 task    : task,
                 pid     : null,
                 bundle  : bundle,
                 env     : env
+            }, function onStarted(err){
+                _this.renderJSON({status:"ok"});
             });
 
 
@@ -74,8 +76,9 @@ ShutdownController = {
                 err,
                 err.stack
             );
+            this.renderJSON({status:"ko"});
         }
-        this.renderJSON({status:"ok"});
+
     },
     startAllBundles : function(req, res){
         var _this = this;
