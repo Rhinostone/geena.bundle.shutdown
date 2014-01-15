@@ -1,0 +1,25 @@
+{
+  "name": "shutdown",
+  "version": "0.0.1",
+  "description": "Geena shutdown service from withing others Geena bundles to handle tasks like: start, stop and restart.",
+  "keywords" : [
+      "geena",
+      "shutdown",
+      "service",
+      "bundle"
+  ],
+  "author": {
+    "name": "Martin-Luther ETOUMAN",
+    "email": "martin@rhinostone.com"
+  },
+  "dependencies": {},
+  "repository" : {
+      "type" : "git",
+      "url" : "https://github.com/Rhinostone/geena.bundle.shutdown.git"
+  },
+  "copyright" : "Copyright (c) 2009-2013 Rhinostone <geena@rhinostone.com>",
+  "license": "MIT",
+  "engine": [
+    "node >=0.10.22"
+  ]
+}
